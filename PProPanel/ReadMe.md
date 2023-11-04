@@ -8,8 +8,8 @@
 
 - [Creative Cloud](http://creative.adobe.com). Use the Creative Cloud
     application to install Premiere Pro CC and other Adobe applications with
-    which you'll be developing and testing, as well as ExtendScript Toolkit
-    (available under 'previous versions').
+    which you'll be developing and testing, as well as ExtendScript Toolkit CC
+    (available after toggling on 'Show Older Apps' at Preferences > Apps > Settings). 
 
 - The [CEP Test
     Panel](https://github.com/Adobe-CEP/CEP-Resources/tree/master/CEP_11.x/Samples/CEP_HTML_Test_Extension-10.0)
@@ -45,7 +45,13 @@ rebooting, or from the Force Quit dialog):
 defaults write /Users/<username>/Library/Preferences/com.adobe.CSXS.11.plist PlayerDebugMode 1
 ```
 
-On Windows, make the following registry entry (a new Key, of type String):
+
+On Windows, make the following registry entry via PowerShell:
+```
+REG ADD HKCU\SOFTWARE\Adobe\CSXS.11 /v PlayerDebugMode /t REG_SZ /d 1
+```
+
+or via the Registry Editor application (a new Key, of type String):
 
 ![Registry image](payloads/Registry.png)
 
